@@ -67,6 +67,39 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F8013E892467C06900C21EB8 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				FA31417C2464B78D00BBF436 /* AppDelegate.swift */,
+				FA31417E2464B78D00BBF436 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		F8013E8A2467C07100C21EB8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F8013E8B2467C07B00C21EB8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F8617AAC2467C18300DA328C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA3141802464B78D00BBF436 /* ViewController.swift */,
+				FAD4B4DF2465D8A60032FF4E /* SignUpViewController.swift */,
+				FAD4B4E324662A9B0032FF4E /* FeedViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FA3141702464B78D00BBF436 = {
 			isa = PBXGroup;
 			children = (
@@ -88,11 +121,10 @@
 		FA31417B2464B78D00BBF436 /* fitnessapp */ = {
 			isa = PBXGroup;
 			children = (
-				FA31417C2464B78D00BBF436 /* AppDelegate.swift */,
-				FA31417E2464B78D00BBF436 /* SceneDelegate.swift */,
-				FA3141802464B78D00BBF436 /* ViewController.swift */,
-				FAD4B4DF2465D8A60032FF4E /* SignUpViewController.swift */,
-				FAD4B4E324662A9B0032FF4E /* FeedViewController.swift */,
+				F8617AAC2467C18300DA328C /* Views */,
+				F8013E8B2467C07B00C21EB8 /* Models */,
+				F8013E8A2467C07100C21EB8 /* ViewControllers */,
+				F8013E892467C06900C21EB8 /* Delegates */,
 				FA3141822464B78D00BBF436 /* Main.storyboard */,
 				FA3141852464B79200BBF436 /* Assets.xcassets */,
 				FA3141872464B79200BBF436 /* LaunchScreen.storyboard */,
