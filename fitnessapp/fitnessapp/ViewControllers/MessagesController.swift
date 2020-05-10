@@ -239,6 +239,5 @@ class MessagesController: UITableViewController {
     @objc func handleBack() {
 		self.dismiss(animated: true, completion: nil)
     }
-
 }
 
