@@ -14,9 +14,11 @@ class NewMessageController: UITableViewController {
     let cellId = "cellId"
     
     var users = [User]()
+    var messagesController: MessagesController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		overrideUserInterfaceStyle = .dark
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
         
@@ -31,6 +33,7 @@ class NewMessageController: UITableViewController {
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 let user = User(dictionary: dictionary)
                 user.id = snapshot.key
+				
                 self.users.append(user)
                 
                 //this will crash because of background thread, so lets use dispatch_async to fix
@@ -68,9 +71,7 @@ class NewMessageController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 72
-    }
-    
-    var messagesController: MessagesController?
+	}
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         dismiss(animated: true) { 
