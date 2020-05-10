@@ -1,9 +1,8 @@
 //
 //  UserCell.swift
-//  gameofchats
+//  fitnessapp
 //
-//  Created by Brian Voong on 7/8/16.
-//  Copyright © 2016 letsbuildthatapp. All rights reserved.
+//  Copyright © 2020 Julian Castrence and Henry Wang. All rights reserved.
 //
 
 import UIKit

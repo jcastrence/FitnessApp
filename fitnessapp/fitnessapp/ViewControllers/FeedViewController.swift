@@ -2,7 +2,6 @@
 //  FeedViewController.swift
 //  fitnessapp
 //
-//  Created by Ian on 5/8/20.
 //  Copyright © 2020 Julian Castrence. All rights reserved.
 //
 
@@ -17,7 +16,12 @@ class FeedViewController: UIViewController {
     }
     
 
-    /*
+	@IBAction func messageButton(_ sender: Any) {
+		self.show(MessagesController(), sender: self)
+	}
+	
+	
+	/*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
