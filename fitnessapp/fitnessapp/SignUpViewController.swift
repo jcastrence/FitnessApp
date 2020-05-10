@@ -23,6 +23,7 @@ class SignUpViewController: UIViewController {
     var password: String!
     var name: String!
     var isTrainee: Bool!
+    var userCreationFailed: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,8 +54,10 @@ class SignUpViewController: UIViewController {
         }
         // If fields are good, create a new user
         createNewUser(self.email, self.password, self.name, self.isTrainee)
-        // User has been created, go the the feed
-        goToFeed()
+        // User has been created, go the the feed, otherwise do nothing
+        if self.userCreationFailed == nil {
+            goToFeed()
+        }
     }
     
     func validateFields() -> String? {
@@ -70,7 +73,7 @@ class SignUpViewController: UIViewController {
                 return "Enter a name containing only letters"
             }
             self.email = email.trimmingCharacters(in: .whitespacesAndNewlines)
-            self.password = password.trimmingCharacters(in: .whitespacesAndNewlines)
+            self.password = password
             self.name = name.trimmingCharacters(in: .whitespacesAndNewlines)
             switch profileTypeSegControl.selectedSegmentIndex {
             case 0:
@@ -118,16 +121,18 @@ class SignUpViewController: UIViewController {
             if err != nil {
                 // Error trying to create user
                 self.inputErrorLabel.text = "There was an error trying to create this user."
+                self.userCreationFailed = true
             }
             else {
                 let db = Firestore.firestore()
                 let userData: [String:Any] = [
-                    "uid": result!.user.uid, "email": email, "password": password, "name": name, "isTrainee": isTrainee
+                    "uid": result!.user.uid, "email": email, "name": name, "isTrainee": isTrainee
                 ]
                 print(userData)
                 db.collection("users").addDocument(data: userData) { (err) in
                     if err != nil {
                         self.inputErrorLabel.text = "There was an error adding this user to the database."
+                        self.userCreationFailed = true
                     }
                 }
             }
