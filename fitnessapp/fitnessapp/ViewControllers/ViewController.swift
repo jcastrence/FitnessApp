@@ -78,7 +78,6 @@ class ViewController: UIViewController {
     }
     
     func validateFields() -> String? {
-        self.inputErrorLabel.text = ""
         if let email = emailField.text, let password = passwordField.text {
             if !isValidEmail(email) {
                 return "Invalid email address"
