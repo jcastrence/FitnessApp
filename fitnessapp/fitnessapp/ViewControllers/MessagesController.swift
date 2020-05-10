@@ -41,10 +41,15 @@ class MessagesController: UITableViewController {
         super.viewDidLoad()
 		overrideUserInterfaceStyle = .dark
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(handleBack))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(handleBack))
+		// Change tint of the "Back" button to be UMD Red
+		navigationItem.leftBarButtonItem!.tintColor = UIColor(red: 0.81, green: 0.06, blue: 0.18, alpha: 1.00)
         
-        let image = UIImage(named: "new_message_icon")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(handleNewMessage))
+        let new_message = UIImage(named: "new_message_icon")
+		
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: new_message, style: .plain, target: self, action: #selector(handleNewMessage))
+		// Change tint of the new message button to be UMD Red
+		navigationItem.rightBarButtonItem!.tintColor = UIColor(red: 0.81, green: 0.06, blue: 0.18, alpha: 1.00)
         
 		fetchUserAndSetupNavBarTitle()
 		
