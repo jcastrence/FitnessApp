@@ -19,12 +19,16 @@ class FeedViewController: UIViewController {
     
 
 	@IBAction func messageButton(_ sender: Any) {
-		switchToMessages()
+		let messagesController = MessagesController()
+		let navController = UINavigationController(rootViewController: messagesController)
+		present(navController, animated: true, completion: nil)
 		print("button pressed")
 	}
 	
 	func switchToMessages() {
+		print("switch")
 		self.messagesController?.fetchUserAndSetupNavBarTitle()
+		self.dismiss(animated: true, completion: nil)
     }
 	
 	/*
