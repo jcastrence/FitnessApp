@@ -19,6 +19,23 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
     }
     
     var messages = [Message]()
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		overrideUserInterfaceStyle = .dark
+		
+		collectionView?.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
+//        collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
+		collectionView?.alwaysBounceVertical = true
+		collectionView?.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.12, alpha: 1.00)
+		collectionView?.register(ChatMessageCell.self, forCellWithReuseIdentifier: cellId)
+		
+		collectionView?.keyboardDismissMode = .interactive
+		
+//        setupInputComponents()
+//
+//        setupKeyboardObservers()
+	}
     
     func observeMessages() {
         guard let uid = Auth.auth().currentUser?.uid, let toId = user?.id else {
@@ -58,22 +75,6 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
     }()
     
     let cellId = "cellId"
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        collectionView?.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
-//        collectionView?.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
-        collectionView?.alwaysBounceVertical = true
-        collectionView?.backgroundColor = UIColor.white
-        collectionView?.register(ChatMessageCell.self, forCellWithReuseIdentifier: cellId)
-        
-        collectionView?.keyboardDismissMode = .interactive
-        
-//        setupInputComponents()
-//        
-//        setupKeyboardObservers()
-    }
     
     lazy var inputContainerView: UIView = {
         let containerView = UIView()
@@ -172,25 +173,25 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
     }
     
     fileprivate func setupCell(_ cell: ChatMessageCell, message: Message) {
-        if let profileImageUrl = self.user?.profileImageUrl {
-            cell.profileImageView.loadImageUsingCacheWithUrlString(profileImageUrl)
-        }
+//        if let profileImageUrl = self.user?.profileImageUrl {
+//            cell.profileImageView.loadImageUsingCacheWithUrlString(profileImageUrl)
+//        }
         
         if message.fromId == Auth.auth().currentUser?.uid {
-            //outgoing blue
-            cell.bubbleView.backgroundColor = ChatMessageCell.blueColor
+            // Outgoing messages will have a red bubble
+            cell.bubbleView.backgroundColor = UIColor(red: 0.81, green: 0.06, blue: 0.18, alpha: 1.00)
             cell.textView.textColor = UIColor.white
-            cell.profileImageView.isHidden = true
             
+			cell.profileImageView.isHidden = true
             cell.bubbleViewRightAnchor?.isActive = true
             cell.bubbleViewLeftAnchor?.isActive = false
             
         } else {
-            //incoming gray
-            cell.bubbleView.backgroundColor = UIColor(r: 240, g: 240, b: 240)
-            cell.textView.textColor = UIColor.black
-            cell.profileImageView.isHidden = false
+            // Incoming messages will have a gold bubble
+            cell.bubbleView.backgroundColor = UIColor(red: 1.00, green: 0.80, blue: 0.14, alpha: 1.00)
+            cell.textView.textColor = UIColor.white
             
+			cell.profileImageView.isHidden = false
             cell.bubbleViewRightAnchor?.isActive = false
             cell.bubbleViewLeftAnchor?.isActive = true
         }
@@ -204,7 +205,6 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
         
         var height: CGFloat = 80
         
-        //get estimated height somehow????
         if let text = messages[indexPath.item].text {
             height = estimateFrameForText(text).height + 20
         }
@@ -270,12 +270,10 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
     @objc func handleSend() {
         let ref = Database.database().reference().child("messages")
         let childRef = ref.childByAutoId()
-        //is it there best thing to include the name inside of the message node
         let toId = user!.id!
         let fromId = Auth.auth().currentUser!.uid
         let timestamp = Int(Date().timeIntervalSince1970)
         let values = ["text": inputTextField.text!, "toId": toId, "fromId": fromId, "timestamp": timestamp] as [String : Any]
-//        childRef.updateChildValues(values)
         
         childRef.updateChildValues(values) { (error, ref) in
             if error != nil {
@@ -300,18 +298,6 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate, UIColl
         return true
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // Helper function inserted by Swift 4.2 migrator.
