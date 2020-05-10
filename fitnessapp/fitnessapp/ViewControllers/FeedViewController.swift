@@ -8,6 +8,8 @@
 import UIKit
 
 class FeedViewController: UIViewController {
+	
+	var messagesController: MessagesController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,9 +19,13 @@ class FeedViewController: UIViewController {
     
 
 	@IBAction func messageButton(_ sender: Any) {
-		self.show(MessagesController(), sender: self)
+		switchToMessages()
+		print("button pressed")
 	}
 	
+	func switchToMessages() {
+		self.messagesController?.fetchUserAndSetupNavBarTitle()
+    }
 	
 	/*
     // MARK: - Navigation

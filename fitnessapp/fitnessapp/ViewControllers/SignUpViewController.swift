@@ -116,30 +116,36 @@ class SignUpViewController: UIViewController {
     
     // Function to create a new user
     func createNewUser(_ email: String, _ password: String, _ name: String, _ isTrainee: Bool) {
-        Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
+		Auth.auth().createUser(withEmail: email, password: password, completion: { user, err in
             // Check for errors
             if err != nil {
                 // Error trying to create user
                 self.inputErrorLabel.text = "There was an error trying to create this user."
                 self.userCreationFailed = true
-            }
-            else {
-                let db = Firestore.firestore()
+			} else {
+				guard let uid = user?.user.uid else {
+					return
+				}
+				
+				let db = Database.database().reference(fromURL: "https://fitnessapp-79359.firebaseio.com/")
+				let ref = db.child("users").child(uid)
                 let userData: [String:Any] = [
-                    "uid": result!.user.uid, "email": email, "name": name, "isTrainee": isTrainee
+                    "uid": uid, "email": email, "name": name, "isTrainee": isTrainee
                 ]
-                print(userData)
-                db.collection("users").addDocument(data: userData) { (err) in
-                    if err != nil {
-                        self.inputErrorLabel.text = "There was an error adding this user to the database."
-                        self.userCreationFailed = true
-                    }
-                }
+				ref.updateChildValues(userData, withCompletionBlock: { (err, db) in
+					
+					if err != nil {
+						self.userCreationFailed = true
+						return
+					}
+					self.dismiss(animated: true, completion: nil)
+					print("Saved user successfully into Firebase")
+				})
             }
-        }
-    }
+		});
+	}
     
-    // Function to take user the feed page
+    // Function to take user to the feed page
     func goToFeed() {
         let feedViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.feedViewController) as? FeedViewController
         

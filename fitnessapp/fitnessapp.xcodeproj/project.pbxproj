@@ -17,6 +17,7 @@
 		F8617ABC24689BC400DA328C /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8617ABA24689BC400DA328C /* LoginController.swift */; };
 		F8617ABE24689BCF00DA328C /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8617ABD24689BCF00DA328C /* ChatLogController.swift */; };
 		F8617AC024689DB300DA328C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8617ABF24689DB300DA328C /* Extensions.swift */; };
+		F8617AC42468A27100DA328C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8617AC32468A27000DA328C /* GoogleService-Info.plist */; };
 		F8F23E5F2CB3FB408BCFBD90 /* Pods_fitnessapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99FE9C422F16D3F9D2F44D49 /* Pods_fitnessapp.framework */; };
 		FA31417D2464B78D00BBF436 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA31417C2464B78D00BBF436 /* AppDelegate.swift */; };
 		FA31417F2464B78D00BBF436 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA31417E2464B78D00BBF436 /* SceneDelegate.swift */; };
@@ -24,7 +25,6 @@
 		FA3141842464B78D00BBF436 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3141822464B78D00BBF436 /* Main.storyboard */; };
 		FA3141862464B79200BBF436 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3141852464B79200BBF436 /* Assets.xcassets */; };
 		FA3141892464B79200BBF436 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3141872464B79200BBF436 /* LaunchScreen.storyboard */; };
-		FA3141912464BB1D00BBF436 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA3141902464BB1C00BBF436 /* GoogleService-Info.plist */; };
 		FAD4B4E02465D8A60032FF4E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD4B4DF2465D8A60032FF4E /* SignUpViewController.swift */; };
 		FAD4B4E2246628DD0032FF4E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD4B4E1246628DC0032FF4E /* Constants.swift */; };
 		FAD4B4E424662A9C0032FF4E /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD4B4E324662A9B0032FF4E /* FeedViewController.swift */; };
@@ -44,6 +44,7 @@
 		F8617ABA24689BC400DA328C /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		F8617ABD24689BCF00DA328C /* ChatLogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
 		F8617ABF24689DB300DA328C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F8617AC32468A27000DA328C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA3141792464B78D00BBF436 /* fitnessapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fitnessapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA31417C2464B78D00BBF436 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA31417E2464B78D00BBF436 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,7 +53,6 @@
 		FA3141852464B79200BBF436 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA3141882464B79200BBF436 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA31418A2464B79200BBF436 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA3141902464BB1C00BBF436 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FAD4B4DF2465D8A60032FF4E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FAD4B4E1246628DC0032FF4E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FAD4B4E324662A9B0032FF4E /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +129,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		F8617AC52468A27F00DA328C /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				F8617ABF24689DB300DA328C /* Extensions.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		FA3141702464B78D00BBF436 = {
 			isa = PBXGroup;
 			children = (
@@ -154,13 +162,13 @@
 				F8013E8B2467C07B00C21EB8 /* Models */,
 				F8013E8A2467C07100C21EB8 /* ViewControllers */,
 				F8013E892467C06900C21EB8 /* Delegates */,
-				F8617ABF24689DB300DA328C /* Extensions.swift */,
+				F8617AC52468A27F00DA328C /* Other */,
+				FAD4B4E1246628DC0032FF4E /* Constants.swift */,
+				F8617AC32468A27000DA328C /* GoogleService-Info.plist */,
 				FA3141822464B78D00BBF436 /* Main.storyboard */,
 				FA3141852464B79200BBF436 /* Assets.xcassets */,
 				FA3141872464B79200BBF436 /* LaunchScreen.storyboard */,
 				FA31418A2464B79200BBF436 /* Info.plist */,
-				FA3141902464BB1C00BBF436 /* GoogleService-Info.plist */,
-				FAD4B4E1246628DC0032FF4E /* Constants.swift */,
 			);
 			path = fitnessapp;
 			sourceTree = "<group>";
@@ -226,7 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA3141892464B79200BBF436 /* LaunchScreen.storyboard in Resources */,
-				FA3141912464BB1D00BBF436 /* GoogleService-Info.plist in Resources */,
+				F8617AC42468A27100DA328C /* GoogleService-Info.plist in Resources */,
 				FA3141862464B79200BBF436 /* Assets.xcassets in Resources */,
 				FA3141842464B78D00BBF436 /* Main.storyboard in Resources */,
 			);

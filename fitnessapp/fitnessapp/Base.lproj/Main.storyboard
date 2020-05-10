@@ -290,7 +290,7 @@
                                         </constraints>
                                         <state key="normal" image="messages"/>
                                         <connections>
-                                            <action selector="messageButton:" destination="0QD-k9-xtH" eventType="touchUpInside" id="awh-Bz-Vqt"/>
+                                            <action selector="messageButton:" destination="0QD-k9-xtH" eventType="touchUpInside" id="m8m-fm-Zww"/>
                                         </connections>
                                     </button>
                                 </subviews>
