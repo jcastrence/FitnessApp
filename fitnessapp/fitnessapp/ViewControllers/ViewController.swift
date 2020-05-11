@@ -53,15 +53,9 @@ class ViewController: UIViewController {
             return
         }
         // Log In user
-        let queue = DispatchQueue(label: "com.app.queue")
-        queue.sync {
-            logInUser()
-            if let success = self.logInSuccessful {
-                print("this ran")
-                if success == true {
-                    goToFeed()
-                }
-            }
+        logInUser()
+        if logInUser() == true {
+            goToFeed()
         }
     }
     
@@ -109,7 +103,7 @@ class ViewController: UIViewController {
     }
     
     // Function to sign in user using Firebase
-    func logInUser() {
+    func logInUser() -> Bool {
         Auth.auth().signIn(withEmail: self.email, password: self.password) { (result, err) in
             if err != nil {
                 self.inputErrorLabel.text = "Invalid user log in"
@@ -119,6 +113,7 @@ class ViewController: UIViewController {
                 self.logInSuccessful = true
             }
         }
+        return self.logInSuccessful
     }
     
 }
