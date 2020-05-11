@@ -13,8 +13,6 @@
 		F8617AB42467C43900DA328C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8617AB22467C43900DA328C /* User.swift */; };
 		F8617AB724689BB800DA328C /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8617AB524689BB800DA328C /* NewMessageController.swift */; };
 		F8617AB824689BB800DA328C /* MessagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8617AB624689BB800DA328C /* MessagesController.swift */; };
-		F8617ABB24689BC400DA328C /* LoginController+handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8617AB924689BC300DA328C /* LoginController+handlers.swift */; };
-		F8617ABC24689BC400DA328C /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8617ABA24689BC400DA328C /* LoginController.swift */; };
 		F8617ABE24689BCF00DA328C /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8617ABD24689BCF00DA328C /* ChatLogController.swift */; };
 		F8617AC024689DB300DA328C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8617ABF24689DB300DA328C /* Extensions.swift */; };
 		F8F23E5F2CB3FB408BCFBD90 /* Pods_fitnessapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99FE9C422F16D3F9D2F44D49 /* Pods_fitnessapp.framework */; };
@@ -40,8 +38,6 @@
 		F8617AB22467C43900DA328C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F8617AB524689BB800DA328C /* NewMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
 		F8617AB624689BB800DA328C /* MessagesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesController.swift; sourceTree = "<group>"; };
-		F8617AB924689BC300DA328C /* LoginController+handlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoginController+handlers.swift"; sourceTree = "<group>"; };
-		F8617ABA24689BC400DA328C /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		F8617ABD24689BCF00DA328C /* ChatLogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
 		F8617ABF24689DB300DA328C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FA3141792464B78D00BBF436 /* fitnessapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fitnessapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,8 +95,6 @@
 		F8013E8A2467C07100C21EB8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F8617ABA24689BC400DA328C /* LoginController.swift */,
-				F8617AB924689BC300DA328C /* LoginController+handlers.swift */,
 				F8617AB624689BB800DA328C /* MessagesController.swift */,
 				F8617AB524689BB800DA328C /* NewMessageController.swift */,
 				FA3141802464B78D00BBF436 /* ViewController.swift */,
@@ -298,13 +292,11 @@
 				FA31417D2464B78D00BBF436 /* AppDelegate.swift in Sources */,
 				FAD4B4E02465D8A60032FF4E /* SignUpViewController.swift in Sources */,
 				FAD4B4E424662A9C0032FF4E /* FeedViewController.swift in Sources */,
-				F8617ABB24689BC400DA328C /* LoginController+handlers.swift in Sources */,
 				F8617AAF2467C42E00DA328C /* ChatMessageCell.swift in Sources */,
 				F8617AC024689DB300DA328C /* Extensions.swift in Sources */,
 				F8617AB42467C43900DA328C /* User.swift in Sources */,
 				FA31417F2464B78D00BBF436 /* SceneDelegate.swift in Sources */,
 				F8617AB824689BB800DA328C /* MessagesController.swift in Sources */,
-				F8617ABC24689BC400DA328C /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

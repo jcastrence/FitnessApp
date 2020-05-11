@@ -6,15 +6,23 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class FeedViewController: UIViewController {
 	
-	var messagesController: MessagesController?
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var accountTypeSegControl: UISegmentedControl!
+    @IBOutlet weak var feedbackLabel: UILabel!
+    
+    var messagesController: MessagesController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 		overrideUserInterfaceStyle = .dark
+        getUserInfo()
     }
     
 
@@ -40,5 +48,28 @@ class FeedViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    func getUserInfo() {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return
+        }
+        
+        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+        
+        if let dictionary = snapshot.value as? [String: AnyObject] {
+            
+            let user = User(dictionary: dictionary)
+            self.emailTextField.text = user.email
+            self.nameTextField.text = user.name
+        }
+        
+        }, withCancel: nil)
+        
+    }
+    
+    
+    @IBAction func updateAccountTapped(_ sender: Any) {
+    
+    }
+    
 }

@@ -25,21 +25,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SignUp" {
-            if let destination = segue.destination as? SignUpViewController {
-                if userUID != nil {
-                    destination.userUID = userUID;
-                }
-//                if let inputEmail = emailField.text {
-//                    destination.emailField = inputEmail
-//                }
-//                if let inputPassword = passwordField.text {
-//                    destination.passwordField = inputPassword
-//                }
-            }
-        }
-    }
+
     
     func segueToSignUp() {
         performSegue(withIdentifier: "SignUp", sender: nil)
@@ -108,9 +94,11 @@ class ViewController: UIViewController {
             if err != nil {
                 self.inputErrorLabel.text = "Invalid user log in"
                 self.logInSuccessful = false
+                return
             }
             else {
                 self.logInSuccessful = true
+                return
             }
         }
         self.logInSuccessful = true
