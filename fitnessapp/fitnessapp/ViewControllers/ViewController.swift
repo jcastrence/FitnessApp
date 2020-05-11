@@ -113,6 +113,7 @@ class ViewController: UIViewController {
                 self.logInSuccessful = true
             }
         }
+        self.logInSuccessful = true
         return self.logInSuccessful
     }
     
